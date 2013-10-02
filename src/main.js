@@ -243,3 +243,130 @@
 // bob.ping();
 // console.log('Instructor should have 7 pings:', instructor.totalPings);
 
+
+// Step 12
+
+// var DiscountView = Backbone.View.extend({
+//   initialize: function(options) {
+//     this.originalPrice = options.originalPrice;
+//   },
+//   getDiscountedPrice: function () {
+//     this.price = this.originalPrice/2;
+//     return this.price;
+//   }
+// });
+
+// var discount = new DiscountView({
+//   originalPrice: 50
+// });
+// console.log('Discount should be half:', discount.getDiscountedPrice());
+
+
+// Step 13 - ours
+
+// var productTemplate = _.template( $('#templates .product').html() );
+
+// var ProductView = Backbone.View.extend({
+//   events: {
+//     'click h3': 'onTitleClick'
+//   },
+//   initialize: function(options){
+//     this.name = options.name;
+//   },
+
+//   render: function () {
+//     var newProductHtml = productTemplate({name: this.name});
+//     $(this.el).append(newProductHtml);
+//   },
+//   onTitleClick: function () {
+//     console.log('You clicked a title!');
+//   }
+// });
+
+// var product = new ProductView({
+//   name: 'Dry Erase Marker',
+//   el: $('.prod')
+// });
+
+// var product2 = new ProductView({
+//   name: 'White Board',
+//   el: $('.prod')
+// });
+
+// product.render();
+// product2.render();
+
+
+// Step 13 - his
+
+// var productTemplate = _.template( $('#templates .product').html() );
+
+// var ProductView = Backbone.View.extend({
+//   events: {
+//     'click h3': 'onTitleClick'
+//   },
+//   initialize: function(options){
+//     this.name = options.name;
+//   },
+
+//   render: function () {
+//     var newProductHtml = productTemplate({name: this.name});
+//     $(this.el).append(newProductHtml);
+//     return this;
+//   },
+//   onTitleClick: function () {
+//     console.log('You clicked a title!');
+//   }
+// });
+
+// var product = new ProductView({
+//   name: 'Dry Erase Marker'
+// });
+
+// $('body').append( product.render().el );
+
+// Step 14
+
+// var BookView = Backbone.View.extend({
+
+//   render: function () {
+//     $(this.el).text('boooooook');
+//   }
+// });
+
+// var view = new BookView({
+//   el: $('.book')
+// });
+// view.render();
+
+
+// Step 15
+// var bookTemplate = _.template('<p>Title: <%= name %>:</p><p>Price: <%= price %></p>');
+
+// var BookView = Backbone.View.extend({
+//   className: 'books',
+
+//   initialize: function(options){
+//     this.name = options.name;
+//     this.price = options.price;
+//   },
+
+//   render: function(){
+//     var newBookHtml = bookTemplate({name: this.name, price: this.price});
+//     $(this.el).html(newBookHtml);
+//   }
+
+// });
+
+// var bookOne = new BookView({
+//   name: 'Book One',
+//   price: '$10.00'
+// });
+// var bookTwo = new BookView({
+//   name: 'Book Two',
+//   price: '$20.00'
+// });
+// bookOne.render();
+// bookTwo.render();
+// $('.book').append(bookOne.el);
+// $('.book').append(bookTwo.el);
